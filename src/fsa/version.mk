@@ -1,0 +1,3 @@
+NAME	= fsa
+VERSION	= 1.15.2
+RELEASE	= 1
