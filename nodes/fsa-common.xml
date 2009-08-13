@@ -1,0 +1,29 @@
+<?xml version="1.0" standalone="no"?>
+
+<kickstart>
+
+  <description>
+  fsa (Fast Statistical Alignment)
+  </description>
+
+  <copyright>
+  Copyright (C) 2007 Free Software Foundation, Inc. 
+  </copyright>
+
+  <changelog>
+  </changelog>
+  <package>
+   fsa
+  </package>
+  <post>
+mkdir /opt/modulefiles/applications/fsa
+chmod 0755 /opt/modulefiles/applications/fsa
+ln -s /opt/modulefiles/applications/application /opt/modulefiles/applications/fsa/1.2009
+<file name="/opt/modulefiles/applications/fsa/.version.1.15.2">
+#%Module1.0
+set ModulesVersion "1.15.2"
+</file>
+ln -s /opt/modulefiles/applications/fsa/.version.1.15.2 /opt/modulefiles/applications/fsa/.version
+</post>
+
+</kickstart>
