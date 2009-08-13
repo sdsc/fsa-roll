@@ -18,7 +18,7 @@
   <post>
 mkdir /opt/modulefiles/applications/fsa
 chmod 0755 /opt/modulefiles/applications/fsa
-ln -s /opt/modulefiles/applications/application /opt/modulefiles/applications/fsa/1.2009
+ln -s /opt/modulefiles/applications/application /opt/modulefiles/applications/fsa/1.15.2
 <file name="/opt/modulefiles/applications/fsa/.version.1.15.2">
 #%Module1.0
 set ModulesVersion "1.15.2"
