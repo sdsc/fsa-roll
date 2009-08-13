@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="no"?>
+
+<graph>
+
+  <description>
+  fsa (Fast Statistical Alignment)
+  </description>
+
+  <copyright>
+  Copyright (C) 2007 Free Software Foundation, Inc. 
+  </copyright>
+
+  <changelog>
+  </changelog>
+
+  <edge from="base">
+    <to>fsa-common</to>
+  </edge>
+
+</graph>
