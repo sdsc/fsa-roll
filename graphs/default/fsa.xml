@@ -2,19 +2,25 @@
 
 <graph>
 
-  <description>
-  fsa (Fast Statistical Alignment)
-  </description>
+<description>
+FSA (Fast Statistical Alignment)
+http://fsa.sourceforge.net/
+</description>
 
-  <copyright>
-  Copyright (C) 2007 Free Software Foundation, Inc. 
-  </copyright>
+<copyright>
+Copyright (c) 2000 - 2008 The Regents of the University of California.
+All rights reserved. Rocks(r) v5.1 www.rocksclusters.org
+</copyright>
 
-  <changelog>
-  </changelog>
+<changelog>
+</changelog>
 
-  <edge from="base">
-    <to>fsa-common</to>
-  </edge>
+<edge from="base">
+  <to>fsa-common</to>
+</edge>
+
+<edge from="envmodules-common">
+  <to>fsa-modules-common</to>
+</edge>
 
 </graph>

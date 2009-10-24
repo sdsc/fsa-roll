@@ -55,7 +55,8 @@
 # @Copyright@
 #
 
-PKGROOT = /opt/fsa
+PKGROOT = /opt/amos
+
 REDHAT.ROOT = $(PWD)/../../
 
 -include $(ROCKSROOT)/etc/Rules.mk

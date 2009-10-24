@@ -1,0 +1,47 @@
+<?xml version="1.0" standalone="no"?>
+
+<kickstart>
+
+<description>
+FSA (Fast Statistical Alignment)
+http://fsa.sourceforge.net/
+</description>
+
+<copyright>
+Copyright (c) 2000 - 2008 The Regents of the University of California.
+All rights reserved. Rocks(r) v5.1 www.rocksclusters.org
+</copyright>
+
+<changelog>
+</changelog>
+
+<post>
+
+/bin/mkdir -m 0755 -p /opt/modulefiles/applications/fsa
+
+<file name="/opt/modulefiles/applications/fsa/1.15.2" perms="0644">
+#%Module1.0
+set fsaHome /opt/fsa
+set mummerHome /opt/mummer
+set amosHome /opt/amos
+set amosLib $amosHome/lib/AMOS
+module-whatis "fsa"
+module-whatis "Version: 1.15.2"
+module-whatis "Description: fsa"
+prepend-path PATH $fsaHome/bin:$mummerHome/bin:$mummerHome/aux_bin:$amosHome/bin
+prepend-path LD_LIBRARY_PATH $amosLib
+prepend-path LIBPATH $amosLib
+prepend-path PERL5LIB $amosLib
+</file>
+
+<file name="/opt/modulefiles/applications/fsa/.version.1.15.2">
+#%Module1.0
+set ModulesVersion "1.15.2"
+</file>
+
+/bin/ln -s /opt/modulefiles/applications/fsa/.version.1.15.2 \
+           /opt/modulefiles/applications/fsa/.version
+
+</post>
+
+</kickstart>

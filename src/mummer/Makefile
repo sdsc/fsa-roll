@@ -55,7 +55,7 @@
 # @Copyright@
 #
 
-PKGROOT = /opt/fsa
+PKGROOT = /opt/mummer
 REDHAT.ROOT = $(PWD)/../../
 
 -include $(ROCKSROOT)/etc/Rules.mk
@@ -64,15 +64,20 @@ build:
 	tar zxvf $(NAME)-$(VERSION).tgz
 	( \
 	  cd $(NAME)-$(VERSION); \
-	  ./configure --prefix=$(PKGROOT); \
-	  make \
+	  make install \
 	)
-
+	  
 install::
-	mkdir -p $(ROOT)/$(PKGROOT)
+	mkdir -p $(ROOT)/$(PKGROOT)/bin
+	mkdir -p $(ROOT)/$(PKGROOT)/aux_bin
 	( \
 	  cd $(NAME)-$(VERSION); \
-	  make prefix=$(ROOT)/$(PKGROOT) install \
+	  cp dnadiff nucmer2xfig exact-tandems mapview mummerplot nucmer \
+	     promer run-mummer1 run-mummer3 show-diff show-snps show-tiling \
+	     show-coords show-aligns repeat-match aux_bin delta-filter gaps \
+	     mgaps combineMUMs annotate mummer \
+            $(ROOT)/$(PKGROOT)/bin; \
+           cp aux_bin/* $(ROOT)/$(PKGROOT)/aux_bin \
 	)
 
 clean::

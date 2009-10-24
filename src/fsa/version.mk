@@ -1,3 +1,3 @@
-NAME	= fsa
-VERSION	= 1.15.2
-RELEASE	= 1
+NAME    = fsa
+VERSION = 1.15.2
+RELEASE = 1

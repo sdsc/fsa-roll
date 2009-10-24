@@ -2,28 +2,24 @@
 
 <kickstart>
 
-  <description>
-  fsa (Fast Statistical Alignment)
-  </description>
+<description>
+FSA (Fast Statistical Alignment)
+http://fsa.sourceforge.net/
+</description>
 
-  <copyright>
-  Copyright (C) 2007 Free Software Foundation, Inc. 
-  </copyright>
+<copyright>
+Copyright (c) 2000 - 2008 The Regents of the University of California.
+All rights reserved. Rocks(r) v5.1 www.rocksclusters.org
+</copyright>
 
-  <changelog>
-  </changelog>
-  <package>
-   fsa
-  </package>
-  <post>
-mkdir /opt/modulefiles/applications/fsa
-chmod 0755 /opt/modulefiles/applications/fsa
-ln -s /opt/modulefiles/applications/application /opt/modulefiles/applications/fsa/1.15.2
-<file name="/opt/modulefiles/applications/fsa/.version.1.15.2">
-#%Module1.0
-set ModulesVersion "1.15.2"
-</file>
-ln -s /opt/modulefiles/applications/fsa/.version.1.15.2 /opt/modulefiles/applications/fsa/.version
+<changelog>
+</changelog>
+
+<package>amos</package>
+<package>fsa</package>
+<package>mummer</package>
+
+<post>
 </post>
 
 </kickstart>
