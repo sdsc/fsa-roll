@@ -52,10 +52,7 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 # 
-# $Log$
-# Revision 1.2  2009/10/24 00:29:34  jhayes
-# Restructure for release.
-#
+# @Copyright@
 #
 
 -include $(ROLLSROOT)/etc/Rolls.mk
@@ -64,4 +61,3 @@ default: roll
 
 clean::
 	rm -f _arch bootstrap.py
-
