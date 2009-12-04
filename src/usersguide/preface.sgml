@@ -1,0 +1,13 @@
+<preface id="preface" xreflabel="preface">
+<title>Preface</title>
+
+
+<para>
+
+The fsa Roll provides the FSA sequence alignment software for a Rocks cluster
+along with two package FSA depends upon, AMOS and MUMMER.  It places each
+software package into /opt on both server and client nodes.
+
+</para>
+
+</preface>

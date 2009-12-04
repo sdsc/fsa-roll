@@ -5,6 +5,10 @@
 <description>
 FSA (Fast Statistical Alignment)
 http://fsa.sourceforge.net/
+AMOS (genome assembly)
+http://amos.sourceforge.net
+MUMMER (genome alignment)
+http://mummer.sourceforge.net
 </description>
 
 <copyright>
