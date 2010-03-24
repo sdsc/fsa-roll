@@ -18,16 +18,18 @@ All rights reserved. Rocks(r) v5.1 www.rocksclusters.org
 <edge from="base">
   <to>fsa-common</to>
 </edge>
+<order head="base">
+  <tail>fsa-common</tail>
+</order>
 
 <edge from="envmodules-common">
   <to>fsa-modules-common</to>
 </edge>
-
-<order head="fsa-common">
+<order head="envmodules-common">
   <tail>fsa-modules-common</tail>
 </order>
 
-<order head="envmodules-common">
+<order head="fsa-common">
   <tail>fsa-modules-common</tail>
 </order>
 
