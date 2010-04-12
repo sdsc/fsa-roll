@@ -29,6 +29,13 @@ All rights reserved. Rocks(r) v5.1 www.rocksclusters.org
   <tail>fsa-modules-common</tail>
 </order>
 
+<edge from="server">
+  <to>fsa-doc</to>
+</edge>
+<order head="server">
+  <tail>fsa-doc</tail>
+</order>
+
 <order head="fsa-common">
   <tail>fsa-modules-common</tail>
 </order>

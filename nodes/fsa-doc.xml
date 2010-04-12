@@ -1,0 +1,27 @@
+<?xml version="1.0" standalone="no"?>
+
+<kickstart>
+
+<description>
+FSA (Fast Statistical Alignment) roll documentation
+http://fsa.sourceforge.net/
+AMOS (genome assembly)
+http://amos.sourceforge.net
+MUMMER (genome alignment)
+http://mummer.sourceforge.net
+</description>
+
+<copyright>
+Copyright (c) 2000 - 2009 The Regents of the University of California.
+All rights reserved. Rocks(r) v5.1 www.rocksclusters.org
+</copyright>
+
+<changelog>
+</changelog>
+
+<package>roll-fsa-usersguide</package>
+
+<post>
+</post>
+
+</kickstart>
