@@ -25,11 +25,24 @@ All rights reserved. Rocks(r) v5.1 www.rocksclusters.org
 
 <post>
 
+<!-- Check for uninitialized environment variables -->
 <file name="/etc/profile.d/fsa.csh" perms="0644">
   set path = ( /opt/fsa/bin /opt/mummer/bin /opt/mummer/aux_bin /opt/amos/bin $path )
-  setenv LD_LIBRARY_PATH /opt/amos/lib/AMOS:$LD_LIBRARY_PATH
-  setenv LIBPATH /opt/amos/lib/AMOS:$LIBPATH
-  setenv PERL5LIB /opt/amos/lib/AMOS:$PERL5LIB
+  if ( $?LD_LIBRARY_PATH ) then
+      setenv LD_LIBRARY_PATH /opt/amos/lib/AMOS:$LD_LIBRARY_PATH
+  else
+      setenv LD_LIBRARY_PATH /opt/amos/lib/AMOS
+  endif
+  if ( $?LIBPATH ) then
+      setenv LIBPATH /opt/amos/lib/AMOS:$LIBPATH
+  else
+      setenv LIBPATH /opt/amos/lib/AMOS
+  endif
+  if ( $?PERL5LIB ) then
+      setenv PERL5LIB /opt/amos/lib/AMOS:$PERL5LIB
+  else
+      setenv PERL5LIB /opt/amos/lib/AMOS
+  endif
 </file>
 
 <file name="/etc/profile.d/fsa.sh" perms="0644">
