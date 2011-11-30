@@ -53,32 +53,32 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 # @Copyright@
-#
 
 PKGROOT = /opt/mummer
+SOURCE = mummer-$(VERSION)
 REDHAT.ROOT = $(PWD)/../../
 
 -include $(ROCKSROOT)/etc/Rules.mk
 
 build:
-	tar zxvf $(NAME)-$(VERSION).tgz
+	tar zxvf $(SOURCE).tgz
 	( \
-	  cd $(NAME)-$(VERSION); \
+	  cd $(SOURCE); \
 	  make install \
 	)
 	  
 install::
-	mkdir -p $(ROOT)/$(PKGROOT)/bin
-	mkdir -p $(ROOT)/$(PKGROOT)/aux_bin
+	mkdir -p -m 755 $(ROOT)/$(PKGROOT)/bin
+	mkdir -p -m 755 $(ROOT)/$(PKGROOT)/aux_bin
 	( \
-	  cd $(NAME)-$(VERSION); \
+	  cd $(SOURCE); \
 	  cp dnadiff nucmer2xfig exact-tandems mapview mummerplot nucmer \
 	     promer run-mummer1 run-mummer3 show-diff show-snps show-tiling \
 	     show-coords show-aligns repeat-match aux_bin delta-filter gaps \
 	     mgaps combineMUMs annotate mummer \
             $(ROOT)/$(PKGROOT)/bin; \
-           cp aux_bin/* $(ROOT)/$(PKGROOT)/aux_bin \
+	  cp aux_bin/* $(ROOT)/$(PKGROOT)/aux_bin \
 	)
 
 clean::
-	rm -rf $(NAME)-$(VERSION)
+	rm -rf $(SOURCE)

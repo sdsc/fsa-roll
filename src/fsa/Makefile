@@ -53,27 +53,27 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 # @Copyright@
-#
 
 PKGROOT = /opt/fsa
+SOURCE = fsa-$(VERSION)
 REDHAT.ROOT = $(PWD)/../../
 
 -include $(ROCKSROOT)/etc/Rules.mk
 
 build:
-	tar zxvf $(NAME)-$(VERSION).tgz
+	tar zxvf $(SOURCE).tgz
 	( \
-	  cd $(NAME)-$(VERSION); \
+	  cd $(SOURCE); \
 	  ./configure --prefix=$(PKGROOT); \
 	  make \
 	)
 
 install::
-	mkdir -p $(ROOT)/$(PKGROOT)
+	mkdir -p -m 755 $(ROOT)/$(PKGROOT)
 	( \
-	  cd $(NAME)-$(VERSION); \
+	  cd $(SOURCE); \
 	  make prefix=$(ROOT)/$(PKGROOT) install \
 	)
 
 clean::
-	rm -rf $(NAME)-$(VERSION)
+	rm -rf $(SOURCE)
