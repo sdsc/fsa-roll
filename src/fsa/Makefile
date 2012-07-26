@@ -61,7 +61,8 @@ REDHAT.ROOT = $(PWD)/../../
 -include $(ROCKSROOT)/etc/Rules.mk
 
 build:
-	tar zxvf $(SOURCE).tgz
+	tar zxvf $(SOURCE).tar.gz
+	cp patch-files/AlignmentPanel.java $(SOURCE)/display/mad/
 	( \
 	  cd $(SOURCE); \
 	  ./configure --prefix=$(PKGROOT); \

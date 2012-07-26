@@ -1,3 +1,3 @@
 NAME    = mummer
-VERSION = 3.21
+VERSION = 3.23
 RELEASE = 1

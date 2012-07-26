@@ -1,3 +1,3 @@
 NAME    = amos
-VERSION = 1.0
+VERSION = 3.1.0
 RELEASE = 1

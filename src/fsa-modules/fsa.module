@@ -1,0 +1,8 @@
+#%Module1.0
+prepend-path PATH /opt/amos/bin
+prepend-path PATH /opt/mummer/aux_bin
+prepend-path PATH /opt/mummer/bin
+prepend-path PATH /opt/fsa/bin
+prepend-path LD_LIBRARY_PATH /opt/amos/lib/AMOS
+prepend-path LIBPATH /opt/amos/lib/AMOS
+prepend-path PERL5LIB /opt/amos/lib/AMOS
