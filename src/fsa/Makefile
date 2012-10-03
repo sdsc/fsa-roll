@@ -75,6 +75,7 @@ install::
 	  cd $(SOURCE); \
 	  make prefix=$(ROOT)/$(PKGROOT) install \
 	)
+	cp -r $(SOURCE)/examples $(ROOT)/$(PKGROOT)/
 
 clean::
 	rm -rf $(SOURCE)

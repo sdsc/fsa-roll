@@ -23,35 +23,6 @@ All rights reserved. Rocks(r) v5.1 www.rocksclusters.org
 <package>fsa</package>
 <package>mummer</package>
 <package>fsa-modules</package>
-
-<post>
-
-<file name="/etc/profile.d/fsa.csh" perms="0644">
-  set path = ( /opt/fsa/bin /opt/mummer/bin /opt/mummer/aux_bin /opt/amos/bin $path )
-  if ( $?LD_LIBRARY_PATH ) then
-      setenv LD_LIBRARY_PATH /opt/amos/lib/AMOS:$LD_LIBRARY_PATH
-  else
-      setenv LD_LIBRARY_PATH /opt/amos/lib/AMOS
-  endif
-  if ( $?LIBPATH ) then
-      setenv LIBPATH /opt/amos/lib/AMOS:$LIBPATH
-  else
-      setenv LIBPATH /opt/amos/lib/AMOS
-  endif
-  if ( $?PERL5LIB ) then
-      setenv PERL5LIB /opt/amos/lib/AMOS:$PERL5LIB
-  else
-      setenv PERL5LIB /opt/amos/lib/AMOS
-  endif
-</file>
-
-<file name="/etc/profile.d/fsa.sh" perms="0644">
-  export PATH=/opt/fsa/bin:/opt/mummer/bin:/opt/mummer/aux_bin:/opt/amos/bin:$PATH
-  export LD_LIBRARY_PATH=/opt/amos/lib/AMOS:$LD_LIBRARY_PATH
-  export LIBPATH=/opt/amos/lib/AMOS:$LIBPATH
-  export PERL5LIB=/opt/amos/lib/AMOS:$PERL5LIB
-</file>
-
-</post>
+<package>fsa-roll-test</package>
 
 </kickstart>

@@ -78,6 +78,7 @@ install::
 	)
 	umount $(PKGROOT)
 	rmdir $(PKGROOT) || true
+	cp -r $(SOURCE)/test $(ROOT)/$(PKGROOT)/
 
 clean::
 	rm -rf $(SOURCE)
