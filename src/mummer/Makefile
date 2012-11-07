@@ -80,7 +80,7 @@ install::
             $(ROOT)/$(PKGROOT)/bin; \
 	  cp aux_bin/* $(ROOT)/$(PKGROOT)/aux_bin \
 	)
-	cp patch-files/test/README patch-files/test/*.fasta $(ROOT)/$(PKGROOT)/
+	cp patch-files/test/README patch-files/test/*.fasta $(ROOT)/$(PKGROOT)/test
 
 clean::
 	rm -rf $(SOURCE)
