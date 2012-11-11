@@ -1,4 +1,7 @@
 #%Module1.0
+setenv AMOSHOME /opt/amos
+setenv MUMMERHOME /opt/mummer
+setenv FSAHOME /opt/fsa
 prepend-path PATH /opt/amos/bin
 prepend-path PATH /opt/mummer/aux_bin
 prepend-path PATH /opt/mummer/bin
