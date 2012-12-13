@@ -1,0 +1,2 @@
+AlignmentPanel.java
+  Patch needed because com.sun package no longer available.
