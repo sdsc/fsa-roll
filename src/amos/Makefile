@@ -64,7 +64,7 @@ include pull.mk
 
 build: $(SRC_DIRS)
 	( \
-	  cd $($AMOS_SOURCE_DIR); \
+	  cd $(AMOS_SOURCE_DIR); \
 	  ./configure --prefix=$(PKGROOT); \
 	  $(MAKE) ; \
 	)

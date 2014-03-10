@@ -1,7 +1,7 @@
 NAME               = mummer
 VERSION            = 3.23
 RELEASE            = 1
-PKG_ROOT           = /opt/mummer
+PKGROOT            = /opt/mummer
 RPM.EXTRAS         = AutoReq:No
 
 SRC_SUBDIR         = mummer

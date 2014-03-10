@@ -1,8 +1,8 @@
 NAME             = amos
 VERSION          = 3.1.0
 RELEASE          = 1
-PKG_ROOT         = /opt/amos
-RPM.EXTRAS         = AutoReq:No
+PKGROOT          = /opt/amos
+RPM.EXTRAS       = AutoReq:No
 
 SRC_SUBDIR       = amos
 

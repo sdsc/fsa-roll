@@ -64,14 +64,14 @@ include pull.mk
 
 build: $(SRC_DIRS)
 	( \
-	  cd $($MUMMER_SOURCE_DIR); \
+	  cd $(MUMMER_SOURCE_DIR); \
 	  $(MAKE) install; \
 	)
 	@echo "::: Package $(NAME) build complete :::"
 	
 install::
 	mkdir -p -m 755 $(ROOT)/$(PKGROOT)/bin
-	mkdir -p -m 755 (ROOT)/$(PKGROOT)/aux_bin
+	mkdir -p -m 755 $(ROOT)/$(PKGROOT)/aux_bin
 	mkdir -p -m 755 $(ROOT)/$(PKGROOT)/test
 	( \
 	  cd $(MUMMER_SOURCE_DIR); \

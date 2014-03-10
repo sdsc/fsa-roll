@@ -62,22 +62,22 @@ REDHAT.ROOT = $(CURDIR)/../../
 include Rules.mk
 include pull.mk
 
-build: $(SRC_DIRS)a
+build: $(SRC_DIRS)
 	cp patch-files/AlignmentPanel.java $(FSA_SOURCE_DIR)/display/mad/
 	( \
-	  cd $($FSA_SOURCE_DIR); \
+	  cd $(FSA_SOURCE_DIR); \
 	  ./configure --prefix=$(PKGROOT); \
 	  $(MAKE) ; \
 	)
 	@echo "::: Package $(NAME) build complete :::"
-	
+
 install::
 	mkdir -p -m 755 $(ROOT)/$(PKGROOT)
 	( \
 	  cd $(FSA_SOURCE_DIR); \
 	  $(MAKE) prefix=$(ROOT)/$(PKGROOT) install ; \
 	)
-	cp -r $(FSZ_SOURCE_DIR)/examples $(ROOT)/$(PKGROOT)/
+	cp -r $(FSA_SOURCE_DIR)/examples $(ROOT)/$(PKGROOT)/
 	@echo "::: Package $(NAME) install complete :::"
 
 clean::

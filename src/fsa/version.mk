@@ -1,8 +1,8 @@
 NAME            = fsa
 VERSION         = 1.15.7
 RELEASE         = 1
-PKG_ROOT        = /opt/fsa
-RPM.EXTRAS         = AutoReq:No
+PKGROOT         = /opt/fsa
+RPM.EXTRAS      = AutoReq:No
 
 SRC_SUBDIR      = fsa
 
