@@ -63,23 +63,23 @@ include Rules.mk
 include pull.mk
 
 build: $(SRC_DIRS)
-	cp patch-files/AlignmentPanel.java $(FSA_SOURCE_DIR)/display/mad/
+	cp patch-files/AlignmentPanel.java $(SOURCE_DIR)/display/mad/
 	( \
-	  cd $(FSA_SOURCE_DIR); \
+	  cd $(SOURCE_DIR); \
 	  ./configure --prefix=$(PKGROOT); \
-	  $(MAKE) ; \
+	  $(MAKE) \
 	)
 	@echo "::: Package $(NAME) build complete :::"
 
 install::
 	mkdir -p -m 755 $(ROOT)/$(PKGROOT)
 	( \
-	  cd $(FSA_SOURCE_DIR); \
-	  $(MAKE) prefix=$(ROOT)/$(PKGROOT) install ; \
+	  cd $(SOURCE_DIR); \
+	  $(MAKE) prefix=$(ROOT)/$(PKGROOT) install \
 	)
-	cp -r $(FSA_SOURCE_DIR)/examples $(ROOT)/$(PKGROOT)/
+	cp -r $(SOURCE_DIR)/examples $(ROOT)/$(PKGROOT)/
 	@echo "::: Package $(NAME) install complete :::"
 
 clean::
-	rm -rf $(FSA_SOURCE_DIR)
+	rm -rf $(SOURCE_DIR)
 

@@ -28,7 +28,7 @@ Rocks development machine.
 
 ## Dependencies
 
-Unknown at this time.
+None.
 
 
 ## Building
@@ -76,10 +76,4 @@ run the test scripts execute the following command(s):
 
 ```shell
 % /root/rolltests/fsa.t 
-ok 1 - fsa is installed
-ok 2 - fsa test run
-ok 3 - fsa module installed
-ok 4 - fsa version module installed
-ok 5 - fsa version module link created
-1..5
 ```

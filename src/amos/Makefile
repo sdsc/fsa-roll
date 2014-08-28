@@ -64,25 +64,24 @@ include pull.mk
 
 build: $(SRC_DIRS)
 	( \
-	  cd $(AMOS_SOURCE_DIR); \
-	  ./configure --prefix=$(PKGROOT); \
-	  $(MAKE) ; \
+	  cd $(SOURCE_DIR); \
+	  ./configure --prefix=$(ROOT)/$(PKGROOT); \
+	  $(MAKE) \
 	)
 	@echo "::: Package $(NAME) build complete :::"
 	
 install::
 	mkdir -p -m 755 $(ROOT)/$(PKGROOT)
-	mkdir -p $(PKGROOT)
-	mount --bind $(ROOT)/$(PKGROOT) $(PKGROOT)
 	( \
-	  cd $(AMOS_SOURCE_DIR); \
-	  $(MAKE) install ; \
+	  cd $(SOURCE_DIR); \
+	  $(MAKE) install \
 	)
-	umount $(PKGROOT)
-	-rmdir $(PKGROOT)
-	cp -r $(AMOS_SOURCE_DIR)/test $(ROOT)/$(PKGROOT)/
+	# Fix references to install dir in rpm text files
+	perl -pi -e "s#$(ROOT)##g" \
+	  `find $(ROOT)/$(PKGROOT)/ -type f -exec grep -Il . {} ';'`
+	cp -r $(SOURCE_DIR)/test $(ROOT)/$(PKGROOT)/
 	@echo "::: Package $(NAME) install complete :::"
 
 clean::
-	rm -rf $(AMOS_SOURCE_DIR)
+	rm -rf $(SOURCE_DIR)
 

@@ -1,15 +1,14 @@
-NAME               = mummer
-VERSION            = 3.23
-RELEASE            = 1
-PKGROOT            = /opt/mummer
-RPM.EXTRAS         = AutoReq:No
+NAME        = mummer
+VERSION     = 3.23
+RELEASE     = 2
+PKGROOT     = /opt/mummer
 
-SRC_SUBDIR         = mummer
+SRC_SUBDIR  = mummer
 
-MUMMER_NAME        = $(NAME)
-MUMMER_VERSION     = $(VERSION)
-MUMMER_PKG_SUFFIX  = tar.gz
-MUMMER_SOURCE_PKG  = $(MUMMER_NAME)-$(MUMMER_VERSION).$(MUMMER_PKG_SUFFIX)
-MUMMER_SOURCE_DIR  = $(MUMMER_SOURCE_PKG:%.$(MUMMER_PKG_SUFFIX)=%)
+PKG_SUFFIX  = tar.gz
+SOURCE_PKG  = $(NAME)-$(VERSION).$(PKG_SUFFIX)
+SOURCE_DIR  = $(SOURCE_PKG:%.$(PKG_SUFFIX)=%)
 
-TAR_GZ_PKGS        = $(MUMMER_SOURCE_PKG)
+TAR_GZ_PKGS = $(SOURCE_PKG)
+
+RPM.EXTRAS  = AutoReq:No
