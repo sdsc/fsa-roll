@@ -1,14 +1,16 @@
-NAME       = amos
-VERSION    = 3.1.0
-RELEASE    = 2
-PKGROOT    = /opt/amos
+NAME           = amos
+VERSION        = 3.1.0
+RELEASE        = 2
+PKGROOT        = /opt/amos
 
-SRC_SUBDIR = amos
+SRC_SUBDIR     = amos
 
-PKG_SUFFIX = tgz
-SOURCE_PKG = $(NAME)-$(VERSION).$(PKG_SUFFIX)
-SOURCE_DIR = $(SOURCE_PKG:%.$(PKG_SUFFIX)=%)
+SOURCE_NAME    = amos
+SOURCE_SUFFIX  = tgz
+SOURCE_VERSION = $(VERSION)
+SOURCE_PKG     = $(SOURCE_NAME)-$(SOURCE_VERSION).$(SOURCE_SUFFIX)
+SOURCE_DIR     = $(SOURCE_PKG:%.$(SOURCE_SUFFIX)=%)
 
-TGZ_PKGS   = $(SOURCE_PKG)
+TGZ_PKGS       = $(SOURCE_PKG)
 
-RPM.EXTRAS = AutoReq:No
+RPM.EXTRAS     = AutoReq:No

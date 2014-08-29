@@ -1,5 +1,5 @@
-NAME	   = fsa-roll-test
-VERSION	   = 1
-RELEASE	   = 0
+NAME       = fsa-roll-test
+VERSION    = 1
+RELEASE    = 0
 
 RPM.EXTRAS = AutoReq:No
