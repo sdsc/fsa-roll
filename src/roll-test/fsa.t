@@ -36,10 +36,7 @@ SKIP : {
   skip 'amos test not installed', 1 if ! -d $testDir;
   open(OUT, ">${TESTFILE}amos.sh");
   print OUT <<END;
-if test -f /etc/profile.d/modules.sh; then
-  . /etc/profile.d/modules.sh
-  module load fsa
-fi
+module load fsa
 mkdir ${TESTFILE}amos.dir
 cd ${TESTFILE}amos.dir
 cp $testDir/influenza-A.afg .
@@ -64,10 +61,7 @@ SKIP : {
   skip 'fsa test not installed', 1 if ! -d $testDir;
   open(OUT, ">${TESTFILE}fsa.sh");
   print OUT <<END;
-if test -f /etc/profile.d/modules.sh; then
-  . /etc/profile.d/modules.sh
-  module load fsa
-fi
+module load fsa
 mkdir ${TESTFILE}fsa.dir
 cd ${TESTFILE}fsa.dir
 fsaResult=PASSED
@@ -94,10 +88,7 @@ SKIP : {
   skip 'mummer test not installed', 1 if ! -d $testDir;
   open(OUT, ">${TESTFILE}mummer.sh");
   print OUT <<END;
-if test -f /etc/profile.d/modules.sh; then
-  . /etc/profile.d/modules.sh
-  module load fsa
-fi
+module load fsa
 mkdir ${TESTFILE}mummer.dir
 cd ${TESTFILE}mummer.dir
 cp $testDir/*.fasta .
@@ -112,7 +103,6 @@ END
 SKIP: {
 
   skip 'fsa not installed', 3 if $appliance !~ /$installedOnAppliancesPattern/;
-  skip 'modules not installed', 3 if ! -f '/etc/profile.d/modules.sh';
   `/bin/ls /opt/modulefiles/applications/fsa/[0-9]* 2>&1`;
   ok($? == 0, 'fsa module installed');
   `/bin/ls /opt/modulefiles/applications/fsa/.version.[0-9]* 2>&1`;
