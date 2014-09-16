@@ -13,12 +13,6 @@ my @packages = ('amos', 'fsa', 'mummer');
 my $output;
 my $TESTFILE = 'tmpfsa';
 
-# fsa-doc.xml
-SKIP: {
-  skip 'not server', 1 if $appliance ne 'Frontend';
-  ok(-d '/var/www/html/roll-documentation/fsa', 'doc installed');
-}
-
 # fsa-common.xml
 foreach my $package(@packages) {
   if($appliance =~ /$installedOnAppliancesPattern/) {
