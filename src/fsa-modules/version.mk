@@ -1,5 +1,9 @@
-NAME       = fsa-modules
-VERSION    = 1.15.7
-RELEASE    = 1
+NAME        = fsa-modules
+RELEASE     = 2
+PKGROOT     = /opt/modulefiles/applications/fsa
 
-RPM.EXTRAS = AutoReq:No
+VERSION_SRC = $(REDHAT.ROOT)/src/fsa/version.mk
+VERSION_INC = version.inc
+include $(VERSION_INC)
+
+RPM.EXTRAS  = AutoReq:No
