@@ -63,6 +63,8 @@ include Rules.mk
 include pull.mk
 
 build: $(SRC_DIRS)
+	patch $(SOURCE_DIR)/src/Align/find-tandem.cc \
+	  patch-files/find-tandem.cc.patch
 	( \
 	  cd $(SOURCE_DIR); \
 	  ./configure --prefix=$(ROOT)/$(PKGROOT); \
