@@ -1,6 +1,6 @@
 NAME           = fsa
-VERSION        = 1.15.7
-RELEASE        = 2
+VERSION        = 1.15.9
+RELEASE        = 0
 PKGROOT        = /opt/fsa
 
 SRC_SUBDIR     = fsa

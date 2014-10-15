@@ -63,7 +63,8 @@ include Rules.mk
 include pull.mk
 
 build: $(SRC_DIRS)
-	cp patch-files/AlignmentPanel.java $(SOURCE_DIR)/display/mad/
+	patch $(SOURCE_DIR)/display/mad/AlignmentPanel.java \
+	      patch-files/AlignmentPanel.java.patch
 	( \
 	  cd $(SOURCE_DIR); \
 	  ./configure --prefix=$(PKGROOT); \

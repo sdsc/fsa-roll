@@ -1,0 +1,50 @@
+--- AlignmentPanel.java	2014-10-14 22:33:41.792345966 -0700
++++ patch-files/AlignmentPanel.java	2014-08-26 11:37:51.768677041 -0700
+@@ -22,9 +22,14 @@
+ import java.io.*;
+ import java.awt.*;
+ import java.awt.image.*;
+-import com.sun.image.codec.jpeg.*;
++/* JJH
++com.sun packages unavailable in Java 7.  Disabled TIFF save and rewrote JPG
++save using ImageIO.
++*/
++/* JJH import com.sun.image.codec.jpeg.*; */
+ import javax.media.jai.*;
+-import com.sun.media.jai.codec.*;
++/* JJH import com.sun.media.jai.codec.*; */
++import javax.imageio.ImageIO; /* JJH */
+ 
+ public class AlignmentPanel extends JTextPane implements ComponentListener, MouseListener {
+ 
+@@ -229,6 +234,7 @@
+ 
+ 	try {
+ 
++/* JJH
+ 	    // get the iamge
+ 	    BufferedImage saveImage = new BufferedImage (this.getWidth(), this.getHeight(), BufferedImage.TYPE_INT_RGB);
+ 	    // paint it
+@@ -258,6 +264,7 @@
+ 
+ 	    RenderedOp op = JAI.create("filestore", saveImage, filename, "tiff", encodeParam);
+ 
++*/
+ 	} catch (Exception e) {
+ 	    System.out.print (e.toString());
+ 	}
+@@ -284,11 +291,14 @@
+ 	    paint(gc);
+ 
+ 	    float quality = 0.25f;
++/* JJH
+ 	    com.sun.image.codec.jpeg.JPEGEncodeParam encodeParam = JPEGCodec.getDefaultJPEGEncodeParam(saveImage);
+ 	    encodeParam.setQuality(quality,false);
+ 
+ 	    JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(file_out, encodeParam);
+ 	    encoder.encode(saveImage);
++*/
++            ImageIO.write(saveImage, "jpg", file_out); /* JJH */
+ 	    System.out.println("Saved frame: " + filename);
+ 	    file_out.close();
+ 	}
