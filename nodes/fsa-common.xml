@@ -16,10 +16,10 @@ Copyright (c) 2000 - 2014 The Regents of the University of California.
 All rights reserved. Rocks(r) v5.1 www.rocksclusters.org
 </copyright>
 
-<package>amos</package>
-<package>fsa</package>
-<package>mummer</package>
-<package>fsa-modules</package>
-<package>fsa-roll-test</package>
+<package>sdsc-amos</package>
+<package>sdsc-fsa</package>
+<package>sdsc-mummer</package>
+<package>sdsc-fsa-modules</package>
+<package>sdsc-fsa-roll-test</package>
 
 </kickstart>

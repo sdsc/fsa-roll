@@ -60,7 +60,23 @@ REDHAT.ROOT = $(CURDIR)/../../
 
 -include $(ROCKSROOT)/etc/Rules.mk
 include Rules.mk
-include pull.mk
+include $(SDSCDEVEL)/Pull.mk
+include $(SDSCDEVEL)/Rules.mk
+
+LICENSE_FILES = $(SOURCE_DIR)/{COPYING,LICENSE,README}
+
+$(NAME).spec: DESCRIPTION LICENSE
+
+DESCRIPTION:
+	( \
+	  $(DESCRIBE_PKG) \
+	) > $@
+
+LICENSE: $(SRC_DIRS)
+	if ! grep -q "Free Software Foundation; either version 3" $(SOURCE_DIR)/README; then \
+	  exit 2; \
+	fi
+	echo GPLv3+ > $@
 
 build: $(SRC_DIRS)
 	patch $(SOURCE_DIR)/display/mad/AlignmentPanel.java \
@@ -79,8 +95,9 @@ install::
 	  $(MAKE) prefix=$(ROOT)/$(PKGROOT) install \
 	)
 	cp -r $(SOURCE_DIR)/examples $(ROOT)/$(PKGROOT)/
+	$(INSTALL_LICENSE_FILES)
 	@echo "::: Package $(NAME) install complete :::"
 
 clean::
-	rm -rf $(SOURCE_DIR)
+	rm -rf $(SOURCE_DIR) DESCRIPTION LICENSE
 

@@ -60,7 +60,23 @@ REDHAT.ROOT = $(CURDIR)/../../
 
 -include $(ROCKSROOT)/etc/Rules.mk
 include Rules.mk
-include pull.mk
+include $(SDSCDEVEL)/Pull.mk
+include $(SDSCDEVEL)/Rules.mk
+
+LICENSE_FILES = $(SOURCE_DIR)/COPYING
+
+$(NAME).spec: DESCRIPTION LICENSE
+
+DESCRIPTION:
+	( \
+	  $(DESCRIBE_PKG) \
+	) > $@
+
+LICENSE: $(SRC_DIRS)
+	if ! grep -qF "Open Source Initiative" $(LICENSE_FILES); then \
+	  exit 2; \
+	fi
+	echo OSL > $@
 
 build: $(SRC_DIRS)
 	patch $(SOURCE_DIR)/src/Align/find-tandem.cc \
@@ -78,6 +94,7 @@ install::
 	  cd $(SOURCE_DIR); \
 	  $(MAKE) install \
 	)
+	$(INSTALL_LICENSE_FILES)
 	# Fix references to install dir in rpm text files
 	perl -pi -e "s#$(ROOT)##g" \
 	  `find $(ROOT)/$(PKGROOT)/ -type f -exec grep -Il . {} ';'`
@@ -85,5 +102,5 @@ install::
 	@echo "::: Package $(NAME) install complete :::"
 
 clean::
-	rm -rf $(SOURCE_DIR)
+	rm -rf $(SOURCE_DIR) DESCRIPTION LICENSE
 

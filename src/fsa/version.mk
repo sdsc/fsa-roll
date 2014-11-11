@@ -1,6 +1,6 @@
-NAME           = fsa
+NAME           = sdsc-fsa
 VERSION        = 1.15.9
-RELEASE        = 0
+RELEASE        = 1
 PKGROOT        = /opt/fsa
 
 SRC_SUBDIR     = fsa

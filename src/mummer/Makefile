@@ -60,7 +60,23 @@ REDHAT.ROOT = $(CURDIR)/../../
 
 -include $(ROCKSROOT)/etc/Rules.mk
 include Rules.mk
-include pull.mk
+include $(SDSCDEVEL)/Pull.mk
+include $(SDSCDEVEL)/Rules.mk
+
+LICENSE_FILES = $(SOURCE_DIR)/{COPYRIGHT,LICENSE,README}
+
+$(NAME).spec: DESCRIPTION LICENSE
+
+DESCRIPTION:
+	( \
+	  $(DESCRIBE_PKG) \
+	) > $@
+
+LICENSE: $(SRC_DIRS)
+	if ! grep -q "OPEN SOURCE LICENSE" $(SOURCE_DIR)/LICENSE; then \
+	  exit 2; \
+	fi
+	echo OSL > $@
 
 build: $(SRC_DIRS)
 	( \
@@ -83,8 +99,9 @@ install::
 	  cp aux_bin/* $(ROOT)/$(PKGROOT)/aux_bin \
 	)
 	cp patch-files/test/README patch-files/test/*.fasta $(ROOT)/$(PKGROOT)/test
+	$(INSTALL_LICENSE_FILES)
 	@echo "::: Package $(NAME) install complete :::"
 
 clean::
-	rm -rf $(SOURCE_DIR)
+	rm -rf $(SOURCE_DIR) DESCRIPTION LICENSE
 

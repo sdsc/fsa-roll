@@ -1,6 +1,6 @@
-NAME           = amos
+NAME           = sdsc-amos
 VERSION        = 3.1.0
-RELEASE        = 2
+RELEASE        = 3
 PKGROOT        = /opt/amos
 
 SRC_SUBDIR     = amos
