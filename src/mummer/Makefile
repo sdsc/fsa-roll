@@ -63,8 +63,6 @@ include Rules.mk
 include $(SDSCDEVEL)/Pull.mk
 include $(SDSCDEVEL)/Rules.mk
 
-LICENSE_FILES = $(SOURCE_DIR)/{COPYRIGHT,LICENSE,README}
-
 $(NAME).spec: DESCRIPTION LICENSE
 
 DESCRIPTION:
@@ -73,9 +71,7 @@ DESCRIPTION:
 	) > $@
 
 LICENSE: $(SRC_DIRS)
-	if ! grep -q "OPEN SOURCE LICENSE" $(SOURCE_DIR)/LICENSE; then \
-	  exit 2; \
-	fi
+	$(CHECK_LICENSE_FILES)
 	echo OSL > $@
 
 build: $(SRC_DIRS)

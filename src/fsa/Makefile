@@ -63,8 +63,6 @@ include Rules.mk
 include $(SDSCDEVEL)/Pull.mk
 include $(SDSCDEVEL)/Rules.mk
 
-LICENSE_FILES = $(SOURCE_DIR)/{COPYING,LICENSE,README}
-
 $(NAME).spec: DESCRIPTION LICENSE
 
 DESCRIPTION:
@@ -73,10 +71,8 @@ DESCRIPTION:
 	) > $@
 
 LICENSE: $(SRC_DIRS)
-	if ! grep -q "Free Software Foundation; either version 3" $(SOURCE_DIR)/README; then \
-	  exit 2; \
-	fi
-	echo GPLv3+ > $@
+	$(CHECK_LICENSE_FILES)
+	echo GPLv3+ and JMF > $@
 
 build: $(SRC_DIRS)
 	patch $(SOURCE_DIR)/display/mad/AlignmentPanel.java \
