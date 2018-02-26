@@ -56,8 +56,19 @@ To install, execute these instructions on a Rocks frontend:
 % rocks enable roll fsa
 % cd /export/rocks/install
 % rocks create distro
-% rocks run roll fsa | bash
 ```
+
+Subsequent installs of compute and login nodes will then include the contents
+of the fsa-roll.  To avoid cluttering the cluster frontend with unused
+software, the fsa-roll is configured to install only on compute and
+login nodes. To force installation on your frontend, run this command after
+adding the fsa-roll to your distro
+
+```shell
+% rocks run roll fsa host=NAME | bash
+```
+
+where NAME is the DNS name of a compute or login node in your cluster.
 
 In addition to the software itself, the roll installs fsa environment
 module files in:
