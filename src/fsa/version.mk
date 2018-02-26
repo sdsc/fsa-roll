@@ -1,6 +1,6 @@
 NAME           = sdsc-fsa
 VERSION        = 1.15.9
-RELEASE        = 1
+RELEASE        = 2
 PKGROOT        = /opt/fsa
 
 SRC_SUBDIR     = fsa
@@ -13,4 +13,5 @@ SOURCE_DIR     = $(SOURCE_PKG:%.$(SOURCE_SUFFIX)=%)
 
 TAR_GZ_PKGS    = $(SOURCE_PKG)
 
-RPM.EXTRAS     = AutoReq:No
+RPM.EXTRAS     = AutoReq:No\nAutoProv:No
+RPM.PREFIX     = $(PKGROOT)

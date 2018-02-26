@@ -1,6 +1,6 @@
 NAME           = sdsc-amos
 VERSION        = 3.1.0
-RELEASE        = 3
+RELEASE        = 4
 PKGROOT        = /opt/amos
 
 SRC_SUBDIR     = amos
@@ -13,4 +13,5 @@ SOURCE_DIR     = $(SOURCE_PKG:%.$(SOURCE_SUFFIX)=%)
 
 TGZ_PKGS       = $(SOURCE_PKG)
 
-RPM.EXTRAS     = AutoReq:No
+RPM.EXTRAS     = AutoReq:No\nAutoProv:No
+RPM.PREFIX     = $(PKGROOT)
