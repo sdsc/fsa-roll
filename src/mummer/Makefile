@@ -70,30 +70,24 @@ DESCRIPTION:
 	) > $@
 
 LICENSE: $(SRC_DIRS)
+	cp license-files/COPYRIGHT $(SOURCE_DIR)
 	$(CHECK_LICENSE_FILES)
 	echo OSL > $@
 
 build: $(SRC_DIRS)
 	( \
 	  cd $(SOURCE_DIR); \
-	  $(MAKE) install \
+          ./configure --prefix=$(ROOT)/$(PKGROOT); \
+	  $(MAKE) \
 	)
 	@echo "::: Package $(NAME) build complete :::"
 	
 install::
-	mkdir -p -m 755 $(ROOT)/$(PKGROOT)/bin
-	mkdir -p -m 755 $(ROOT)/$(PKGROOT)/aux_bin
-	mkdir -p -m 755 $(ROOT)/$(PKGROOT)/test
 	( \
 	  cd $(SOURCE_DIR); \
-	  cp dnadiff nucmer2xfig exact-tandems mapview mummerplot nucmer \
-	    promer run-mummer1 run-mummer3 show-diff show-snps show-tiling \
-	    show-coords show-aligns repeat-match aux_bin delta-filter gaps \
-	    mgaps combineMUMs annotate mummer \
-	    $(ROOT)/$(PKGROOT)/bin; \
-	  cp aux_bin/* $(ROOT)/$(PKGROOT)/aux_bin \
+          make install \
 	)
-	cp patch-files/test/README patch-files/test/*.fasta $(ROOT)/$(PKGROOT)/test
+	cp test/README patch-files/test/*.fasta $(ROOT)/$(PKGROOT)/test
 	$(INSTALL_LICENSE_FILES)
 	@echo "::: Package $(NAME) install complete :::"
 
