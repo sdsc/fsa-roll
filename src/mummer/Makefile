@@ -83,11 +83,12 @@ build: $(SRC_DIRS)
 	@echo "::: Package $(NAME) build complete :::"
 	
 install::
+	mkdir -p $(ROOT)/$(PKGROOT)
 	( \
 	  cd $(SOURCE_DIR); \
           make install \
 	)
-	cp test/README patch-files/test/*.fasta $(ROOT)/$(PKGROOT)/test
+	cp -r test $(ROOT)/$(PKGROOT)
 	$(INSTALL_LICENSE_FILES)
 	@echo "::: Package $(NAME) install complete :::"
 
