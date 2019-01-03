@@ -1,7 +1,9 @@
 NAME           = sdsc-amos
 VERSION        = 3.1.0
-RELEASE        = 4
+RELEASE        = 5
 PKGROOT        = /opt/amos
+override ROLLCOMPILER   = pgi
+COMPILERNAME := $(firstword $(subst /, ,$(ROLLCOMPILER)))
 
 SRC_SUBDIR     = amos
 

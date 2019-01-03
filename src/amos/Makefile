@@ -65,8 +65,10 @@ include $(SDSCDEVEL)/Rules.mk
 $(NAME).spec: DESCRIPTION LICENSE
 
 DESCRIPTION:
-	( \
-	  $(DESCRIBE_PKG) \
+	$(MODULE_LOAD_CC); \
+        ( \
+          $(DESCRIBE_PKG); \
+          $(DESCRIBE_CC); \
 	) > $@
 
 LICENSE: $(SRC_DIRS)
@@ -77,6 +79,9 @@ build: $(SRC_DIRS)
 	patch $(SOURCE_DIR)/src/Align/find-tandem.cc \
 	  patch-files/find-tandem.cc.patch
 	( \
+          $(MODULE_LOAD_CC); \
+          export CC=$(CC); \
+          export CXX=$(CXX); \
 	  cd $(SOURCE_DIR); \
 	  ./configure --prefix=$(ROOT)/$(PKGROOT); \
 	  $(MAKE) \
@@ -86,6 +91,9 @@ build: $(SRC_DIRS)
 install::
 	mkdir -p -m 755 $(ROOT)/$(PKGROOT)
 	( \
+          $(MODULE_LOAD_CC); \
+          export CC=$(CC); \
+          export CXX=$(CXX); \
 	  cd $(SOURCE_DIR); \
 	  $(MAKE) install \
 	)
