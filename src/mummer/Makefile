@@ -77,17 +77,19 @@ LICENSE: $(SRC_DIRS)
 build: $(SRC_DIRS)
 	( \
 	  cd $(SOURCE_DIR); \
-          ./configure --prefix=$(ROOT)/$(PKGROOT); \
+          ./configure --prefix=$(PKGROOT); \
 	  $(MAKE) \
 	)
 	@echo "::: Package $(NAME) build complete :::"
 	
 install::
 	mkdir -p $(ROOT)/$(PKGROOT)
+	$(PKGROOT_BIND_MOUNT)
 	( \
 	  cd $(SOURCE_DIR); \
           make install \
 	)
+	$(PKGROOT_BIND_UMOUNT)
 	cp -r test $(ROOT)/$(PKGROOT)
 	$(INSTALL_LICENSE_FILES)
 	@echo "::: Package $(NAME) install complete :::"
