@@ -87,7 +87,7 @@ install::
 	$(PKGROOT_BIND_MOUNT)
 	( \
 	  cd $(SOURCE_DIR); \
-          make install \
+          $(MAKE) install \
 	)
 	$(PKGROOT_BIND_UMOUNT)
 	cp -r test $(ROOT)/$(PKGROOT)
