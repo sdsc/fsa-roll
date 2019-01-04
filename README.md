@@ -25,6 +25,8 @@ download the appropriate fsa source file(s) using a machine that does
 have Internet access and copy them into the `src/<package>` directories on your
 Rocks development machine.
 
+The latest version of amos is 8 years old. It does not compile with intel 2018 or gnu 4.8.5 and above. It will compile with pgi 17.5. Therefore the pgi roll is required
+
 
 ## Dependencies
 
@@ -44,7 +46,7 @@ machine (e.g., a frontend or development appliance):
 A successful build will create the file `fsa-*.disk1.iso`.  If you built the
 roll on a Rocks frontend, proceed to the installation step. If you built the
 roll on a Rocks development appliance, you need to copy the roll to your Rocks
-frontend before continuing with installation. Note that amos 3.1.0 will not build with intel 2018 or gnu 4.8.5 and above. It will build with pgi 17.5.
+frontend before continuing with installation.
 
 
 ## Installation
