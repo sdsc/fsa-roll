@@ -1,6 +1,6 @@
 NAME           = sdsc-mummer
-VERSION        = 3.23
-RELEASE        = 4
+VERSION        = 4.0.0beta2
+RELEASE        = 0
 PKGROOT        = /opt/mummer
 
 SRC_SUBDIR     = mummer

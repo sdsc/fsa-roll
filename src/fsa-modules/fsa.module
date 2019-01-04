@@ -9,3 +9,4 @@ prepend-path PATH /opt/fsa/bin
 prepend-path LD_LIBRARY_PATH /opt/amos/lib/AMOS
 prepend-path LIBPATH /opt/amos/lib/AMOS
 prepend-path PERL5LIB /opt/amos/lib/AMOS
+module load pgi

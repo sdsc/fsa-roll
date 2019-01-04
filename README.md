@@ -25,6 +25,8 @@ download the appropriate fsa source file(s) using a machine that does
 have Internet access and copy them into the `src/<package>` directories on your
 Rocks development machine.
 
+The latest version of amos is 8 years old. It does not compile with intel 2018 or gnu 4.8.5 and above. It will compile with pgi 17.5. Therefore the pgi roll is required
+
 
 ## Dependencies
 
